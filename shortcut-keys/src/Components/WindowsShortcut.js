@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import {Helmet} from "react-helmet";
 
 export const WindowsShortcut = () => {
 
@@ -27,6 +28,10 @@ export const WindowsShortcut = () => {
     ) }
     if (data) {
         return (
+            <>
+            <Helmet>
+                <title>Keyboard Shortcuts | Windows</title>
+            </Helmet>
             <div className="container">
                 {data.map((shortcut, index) => (
                 <div key={index.toString()} className="card">
@@ -36,7 +41,7 @@ export const WindowsShortcut = () => {
             )
             )}
             </div>
-            
+            </>
         )
 
     }

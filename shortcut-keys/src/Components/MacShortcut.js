@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet';
 
 export const MacShortcut = () => {
     const [data, setData] = useState(null);
@@ -28,16 +29,20 @@ export const MacShortcut = () => {
     }
     if (data) {
         return (
-            <div className="container">
-                {data.map((shortcut, index) => (
-                    <div key={index.toString()} className="card">
-                        <div class="card-head"><h3>{shortcut.Keys}</h3></div>
-                        <div class="card-body"><p>{shortcut.Function}</p></div>
-                    </div>
-                )
-                )}
-            </div>
-
+            <>
+                <Helmet>
+                    <title>Keyboard Shortcuts | Mac</title>
+                </Helmet>
+                <div className="container">
+                    {data.map((shortcut, index) => (
+                        <div key={index.toString()} className="card">
+                            <div class="card-head"><h3>{shortcut.Keys}</h3></div>
+                            <div class="card-body"><p>{shortcut.Function}</p></div>
+                        </div>
+                    )
+                    )}
+                </div>
+            </>
         )
 
     }

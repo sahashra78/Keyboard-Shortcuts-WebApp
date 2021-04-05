@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Link as Scroll } from 'react-scroll';
+import { Helmet } from 'react-helmet';
 import Windows from './Static/Images/microsoft.svg';
 import Mac from './Static/Images/apple.svg';
 
@@ -8,6 +9,9 @@ import Mac from './Static/Images/apple.svg';
 export const Home = () => {
     return (
         <>
+            <Helmet>
+                <title>Keyboard Shortcuts</title>
+            </Helmet>
             <header className="heroSection">
                 <div className="heroContent">
                     <p className="subContent">Be Efficient and Save Time with</p>
